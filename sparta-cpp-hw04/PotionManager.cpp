@@ -17,6 +17,48 @@ void AlchemyWorkshop::addRecipe(const PotionRecipe& _pRecipes)
     recipes.push_back(_pRecipes);
 }
 
+void AlchemyWorkshop::findRecipeByName(const std::string& _pName)
+{
+    AlchemyWorkshop tempWorkshop;
+
+    for (size_t i = 0; i < recipes.size(); ++i)
+    {
+        if (_pName == recipes[i].potionName)
+        { 
+            tempWorkshop.addRecipe(PotionRecipe(recipes[i].potionName, recipes[i].ingredients));
+        }
+    }
+
+    tempWorkshop.displayAllRecipes();
+}
+
+// 재료를 입력 받아 레시피에서 검색
+void AlchemyWorkshop::findRecipeByIngredients(const std::vector<std::string>& _pIngredient)
+{
+    AlchemyWorkshop tempWorkshop;
+
+    for (size_t i = 0; i < recipes.size(); ++i)
+    {
+        bool isMatched = false;
+        for (size_t j = 0; j < recipes[i].ingredients.size(); ++j)
+        {
+            if (isMatched)
+                break;
+
+            for (size_t k = 0; k < _pIngredient.size(); ++k)
+            {
+                if (_pIngredient[k] == recipes[i].ingredients[j] && !isMatched)
+                {
+                    tempWorkshop.addRecipe(PotionRecipe(recipes[i].potionName, recipes[i].ingredients));
+                    isMatched = true;
+                }
+            }
+        }
+    }
+
+    tempWorkshop.displayAllRecipes();
+}
+
 // 모든 레시피 출력 메서드
 void AlchemyWorkshop::displayAllRecipes() const
 {
