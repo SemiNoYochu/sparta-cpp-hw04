@@ -21,15 +21,12 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="AlchemyWorkshop.cpp">
+    <ClCompile Include="PotionManager.cpp">
       <Filter>PotionManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AlchemyWorkshop.h">
-      <Filter>PotionManager</Filter>
-    </ClInclude>
-    <ClInclude Include="PotionRecipe.h">
+    <ClInclude Include="PotionManager.h">
       <Filter>PotionManager</Filter>
     </ClInclude>
   </ItemGroup>
