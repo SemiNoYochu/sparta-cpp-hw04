@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="sparta-cpp-hw04/sparta-cpp-hw04.vcxproj" />
+</Solution>
